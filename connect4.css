@@ -1,0 +1,104 @@
+
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1{
+  font-weight: bold;
+  font-size: 2rem;
+  color: blue
+}
+
+
+/* game board table */
+
+#board td {
+  width: 50px;
+  height: 50px;
+  border: solid 2px #666;
+  z-index: 3;
+  border-style: inset;
+  
+}
+
+
+
+@keyframes dropdown {
+  from { 
+    transform: translateY(-50%);
+  }
+
+  to{
+    transform: translateY(0%);
+  }
+}
+
+/* pieces are div within game table cells: draw as colored circles */
+
+.piece {
+  position:relative;
+  border-radius: 50%;
+  margin: 5px;
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+  animation-name: dropdown;
+  animation-duration: 0.5s;
+  pointer-events: none;
+ 
+}
+
+.topPiece{
+  position:relative;
+  top: 1.5px;
+  left: 1px;
+ 
+}
+
+.animate {
+  transform: translateY(340px);
+}
+
+
+
+.player1 {
+  background-color: red;
+
+}
+
+.player2 {
+  background-color: blue;
+
+}
+
+/* column-top is table row of clickable areas for each column */
+
+#column-top td {
+  border: dashed 1px lightgray;
+  z-index: 99;
+}
+
+#column-top td:hover {
+  background-color: gold;
+}
+
+
+#game{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+#topRowContainer{
+  width: 422px;
+  height: 58px;
+}
+
+#board{
+  background-color: rgb(240, 240, 180);
+}
+
+.hidden{
+  visibility: hidden;
+}
